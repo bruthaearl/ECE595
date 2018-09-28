@@ -1,0 +1,1 @@
+/usr/bin/gcc -g   CMakeFiles/clion.dir/main.c.o CMakeFiles/clion.dir/getTemp.c.o CMakeFiles/clion.dir/initialize.c.o  -o clion 

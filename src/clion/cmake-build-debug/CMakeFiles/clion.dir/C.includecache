@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+
+/home/jake/school/introIOT/project/src/clion/getTemp.c
+stdio.h
+-
+enums_structs_etc.h
+/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+

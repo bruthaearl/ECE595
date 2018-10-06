@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/clion.dir/initialize.c.o"
   "CMakeFiles/clion.dir/makeDecision.c.o"
   "CMakeFiles/clion.dir/readSetpoints.c.o"
+  "CMakeFiles/clion.dir/cJSON.c.o"
   "clion.pdb"
   "clion"
 )

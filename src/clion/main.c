@@ -9,13 +9,14 @@
 
 tempstuff_t tempStuff;
 sysstuff_t sysStuff;
+setpoints_t setpointdb;
 
 
 int main() {
 
     //char *db_buffer = calloc(DB_SIZE, (sizeof *db_buffer));
 
-    int setpoint = 45;
+    tempStuff.setpoint = 45;
 
     sysStuff.state = INITIALIZE;
     while (1) {
@@ -29,15 +30,15 @@ int main() {
                 getTemp(&tempStuff, &sysStuff);
                 break;
             case MAKE_DECISION :
-                makeDecision(&tempStuff, &sysStuff, setpoint);
+                makeDecision(&tempStuff, &sysStuff, &setpointdb);
                 break;
             case READ_SETPOINTS :
-                readSetpoints(&sysStuff);
+                readSetpoints(&sysStuff, &setpointdb);
                 break;
 
             case DEBUG:
                 printf("current state %d\n", sysStuff.state);
-                printf("setpoint: %d\n", setpoint);
+                printf("setpoint: %d\n", tempStuff.setpoint);
                 printf("temperature reading: %d\n", tempStuff.temp);
                 printf("heater status %d\n", tempStuff.heater);
                 sleep(5);

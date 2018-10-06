@@ -6,6 +6,7 @@
 #define CLION_ENUMS_STRUCTS_ETC_H
 
 
+#include <form.h>
 
 typedef enum{
     INITIALIZE = 0,
@@ -31,6 +32,14 @@ typedef struct {
 typedef struct{
     int temp;
     heater_state heater;
+    int setpoint;
 } tempstuff_t;
+
+typedef struct{
+    int temp[20];
+    int time_h[20];
+    int time_m[20];
+    int count;
+} setpoints_t;
 
 #endif //CLION_ENUMS_STRUCTS_ETC_H

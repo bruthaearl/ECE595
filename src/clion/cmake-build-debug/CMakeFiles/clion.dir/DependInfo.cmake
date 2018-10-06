@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/jake/school/introIOT/project/src/clion/cJSON.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/cJSON.c.o"
   "/home/jake/school/introIOT/project/src/clion/getTemp.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/getTemp.c.o"
   "/home/jake/school/introIOT/project/src/clion/initialize.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/initialize.c.o"
   "/home/jake/school/introIOT/project/src/clion/main.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/main.c.o"

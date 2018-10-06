@@ -123,6 +123,33 @@ clion/fast:
 	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/build
 .PHONY : clion/fast
 
+cJSON.o: cJSON.c.o
+
+.PHONY : cJSON.o
+
+# target to build an object file
+cJSON.c.o:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/cJSON.c.o
+.PHONY : cJSON.c.o
+
+cJSON.i: cJSON.c.i
+
+.PHONY : cJSON.i
+
+# target to preprocess a source file
+cJSON.c.i:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/cJSON.c.i
+.PHONY : cJSON.c.i
+
+cJSON.s: cJSON.c.s
+
+.PHONY : cJSON.s
+
+# target to generate assembly for a file
+cJSON.c.s:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/cJSON.c.s
+.PHONY : cJSON.c.s
+
 getTemp.o: getTemp.c.o
 
 .PHONY : getTemp.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... clion"
+	@echo "... cJSON.o"
+	@echo "... cJSON.i"
+	@echo "... cJSON.s"
 	@echo "... getTemp.o"
 	@echo "... getTemp.i"
 	@echo "... getTemp.s"

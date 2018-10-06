@@ -76,6 +76,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/jake/school/introIOT/project/src/clion/cJSON.c">
+			<Option target="clion"/>
+		</Unit>
+		<Unit filename="/home/jake/school/introIOT/project/src/clion/cJSON.h">
+			<Option target="clion"/>
+		</Unit>
 		<Unit filename="/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h">
 			<Option target="clion"/>
 		</Unit>

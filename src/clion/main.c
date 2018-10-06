@@ -4,11 +4,16 @@
 #include "enums_structs_etc.h"
 #include "function_decs.h"
 
+#define DB_SIZE 2000
+
 
 tempstuff_t tempStuff;
 sysstuff_t sysStuff;
 
+
 int main() {
+
+    //char *db_buffer = calloc(DB_SIZE, (sizeof *db_buffer));
 
     int setpoint = 45;
 
@@ -26,6 +31,10 @@ int main() {
             case MAKE_DECISION :
                 makeDecision(&tempStuff, &sysStuff, setpoint);
                 break;
+            case READ_SETPOINTS :
+                readSetpoints(&sysStuff);
+                break;
+
             case DEBUG:
                 printf("current state %d\n", sysStuff.state);
                 printf("setpoint: %d\n", setpoint);

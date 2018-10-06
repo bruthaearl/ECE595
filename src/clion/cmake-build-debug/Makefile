@@ -231,6 +231,33 @@ makeDecision.c.s:
 	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/makeDecision.c.s
 .PHONY : makeDecision.c.s
 
+readSetpoints.o: readSetpoints.c.o
+
+.PHONY : readSetpoints.o
+
+# target to build an object file
+readSetpoints.c.o:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/readSetpoints.c.o
+.PHONY : readSetpoints.c.o
+
+readSetpoints.i: readSetpoints.c.i
+
+.PHONY : readSetpoints.i
+
+# target to preprocess a source file
+readSetpoints.c.i:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/readSetpoints.c.i
+.PHONY : readSetpoints.c.i
+
+readSetpoints.s: readSetpoints.c.s
+
+.PHONY : readSetpoints.s
+
+# target to generate assembly for a file
+readSetpoints.c.s:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/readSetpoints.c.s
+.PHONY : readSetpoints.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... makeDecision.o"
 	@echo "... makeDecision.i"
 	@echo "... makeDecision.s"
+	@echo "... readSetpoints.o"
+	@echo "... readSetpoints.i"
+	@echo "... readSetpoints.s"
 .PHONY : help
 
 

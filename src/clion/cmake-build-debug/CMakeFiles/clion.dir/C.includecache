@@ -9,15 +9,13 @@
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
 
 /home/jake/school/introIOT/project/src/clion/function_decs.h
+cjson/cJSON.h
+-
 enums_structs_etc.h
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
 
-/home/jake/school/introIOT/project/src/clion/main.c
+/home/jake/school/introIOT/project/src/clion/readSetpoints.c
 stdio.h
--
-stdlib.h
--
-zconf.h
 -
 enums_structs_etc.h
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h

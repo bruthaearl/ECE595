@@ -14,3 +14,7 @@ CMakeFiles/clion.dir/main.c.o: ../main.c
 CMakeFiles/clion.dir/makeDecision.c.o: ../enums_structs_etc.h
 CMakeFiles/clion.dir/makeDecision.c.o: ../makeDecision.c
 
+CMakeFiles/clion.dir/readSetpoints.c.o: ../enums_structs_etc.h
+CMakeFiles/clion.dir/readSetpoints.c.o: ../function_decs.h
+CMakeFiles/clion.dir/readSetpoints.c.o: ../readSetpoints.c
+

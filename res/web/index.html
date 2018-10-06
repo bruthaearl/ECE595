@@ -2,33 +2,6 @@
 <head>
 <title>DANGER THERMOSTAT</title>
 <link rel="stylesheet" href="style.css">
-<script type="application/json" id="testdat">
-{
-	"stats" : [
-	  {
-		"id" : 1,
-		"current_temp" : 69,
-		"current_setpoint" : 81,
-		"heater_status" : 1
-	  }
-	],
-	"setpoints" : [
-	  {
-		"id" : 1,
-		"temp" : 45,
-		"time_h" : 12,
-		"time_m" : 30 
-	  },
-	  {
-		"id" : 2,
-		"temp" : 55,
-		"time_h" : 14,
-		"time_m" : 15
-	  }
-	]
-}
-</script>
-
 </head>
 
 <body>
@@ -78,11 +51,12 @@
 <h2>New Setpoint</h2>
 <table id="new_set_table">
   <tr>
-	<td><input type="text" name="new_temp" min="0" max="100" placeholder="Temp (C)" id="new_temp"></td>
-	<td><input type="text" name="new_hr" min="0" max="24" placeholder="Hour (1-24)" id="new_hour"></td>
-	<td><input type="text" name="new_min" min="0" max="60" placeholder="Minute (1-60)" id="new_minute"></td>
+	<td><input type="number" name="new_temp" min="0" max="100" placeholder="Temp (C)" id="new_temp"></td>
+	<td><input type="number" name="new_hr" min="0" max="24" placeholder="Hour (1-24)" id="new_hour"></td>
+	<td><input type="number" name="new_min" min="0" max="60" placeholder="Minute (1-60)" id="new_minute" required></td>
   </tr>
-  <tr><td colspan="3"><input type="submit" value="Submit"></td>
+  <tr><td colspan="3"><input type="button" value="Submit" class="button" onclick="submitSetpoint()"></td>
+  </tr>
 </table>
 </form>
 

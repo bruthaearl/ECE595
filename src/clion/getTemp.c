@@ -11,7 +11,7 @@ void getTemp(tempstuff_t *tempStuff, sysstuff_t *sysStuff){
     fclose(temp_file);
     tempStuff->temp = temp;
 
-    sysStuff->next_state = MAKE_DECISION;
+    sysStuff->next_state = READ_SETPOINTS;
 
 
 }

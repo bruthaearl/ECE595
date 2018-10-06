@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/jake/school/introIOT/project/src/clion/getTemp.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/getTemp.c.o"
   "/home/jake/school/introIOT/project/src/clion/initialize.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/initialize.c.o"
   "/home/jake/school/introIOT/project/src/clion/main.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/main.c.o"
+  "/home/jake/school/introIOT/project/src/clion/makeDecision.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/makeDecision.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

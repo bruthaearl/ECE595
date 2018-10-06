@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/clion.dir/main.c.o"
   "CMakeFiles/clion.dir/getTemp.c.o"
   "CMakeFiles/clion.dir/initialize.c.o"
+  "CMakeFiles/clion.dir/makeDecision.c.o"
   "clion.pdb"
   "clion"
 )

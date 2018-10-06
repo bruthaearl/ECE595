@@ -204,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/main.c.s
 .PHONY : main.c.s
 
+makeDecision.o: makeDecision.c.o
+
+.PHONY : makeDecision.o
+
+# target to build an object file
+makeDecision.c.o:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/makeDecision.c.o
+.PHONY : makeDecision.c.o
+
+makeDecision.i: makeDecision.c.i
+
+.PHONY : makeDecision.i
+
+# target to preprocess a source file
+makeDecision.c.i:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/makeDecision.c.i
+.PHONY : makeDecision.c.i
+
+makeDecision.s: makeDecision.c.s
+
+.PHONY : makeDecision.s
+
+# target to generate assembly for a file
+makeDecision.c.s:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/makeDecision.c.s
+.PHONY : makeDecision.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... makeDecision.o"
+	@echo "... makeDecision.i"
+	@echo "... makeDecision.s"
 .PHONY : help
 
 

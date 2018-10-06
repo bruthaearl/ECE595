@@ -1,0 +1,48 @@
+{
+  "wines": [
+    {
+      "id": 1,
+      "product": "SOMMELIER SELECT",
+      "desc": "Old vine Cabernet Sauvignon",
+      "price": 159.99
+    },
+    {
+      "id": 2,
+      "product": "MASTER VINTNER",
+      "desc": "Pinot Noir captures luscious aromas",
+      "price": 89.99
+    },
+    {
+      "id": 3,
+      "product": "WINEMAKER'S RESERVE",
+      "desc": "Merlot featuring complex flavors of cherry",
+      "price": 84.99
+    },
+    {
+      "id": 4,
+      "product": "ITALIAN SANGIOVESE",
+      "desc": "Sangiovese grape is famous for its dry, bright cherry character",
+      "price": 147.99
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "like the added grape skins",
+      "wineId": 1
+    },
+    {
+      "id": 1,
+      "body": "the directions need to be clearer",
+      "wineId": 2
+    },
+    {
+      "id": 3,
+      "body": "I received 3 different packages of wood chips",
+      "wineId": 1
+    }
+  ],
+  "profile": {
+    "name": "vintnor"
+  }
+}

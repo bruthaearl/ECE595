@@ -8,9 +8,19 @@
 
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
 
-/home/jake/school/introIOT/project/src/clion/getTemp.c
+/home/jake/school/introIOT/project/src/clion/function_decs.h
+enums_structs_etc.h
+/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+
+/home/jake/school/introIOT/project/src/clion/main.c
 stdio.h
+-
+stdlib.h
+-
+zconf.h
 -
 enums_structs_etc.h
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+function_decs.h
+/home/jake/school/introIOT/project/src/clion/function_decs.h
 

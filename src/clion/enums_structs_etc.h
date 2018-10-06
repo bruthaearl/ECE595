@@ -14,7 +14,7 @@ typedef enum{
     MAKE_DECISION,
     WRITE_TO_FILE,
     PUBLISH_TO_SERVER,
-    UHBORT
+    DEBUG
 } sm_state;
 
 typedef enum {

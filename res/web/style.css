@@ -1,0 +1,82 @@
+body{
+	background: #FAFAFA;
+
+}
+
+h2{
+	color: #34495E;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	text-decoration: underline;
+	margin-bottom: 0px;
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+#container{
+
+	max-width:400px;	
+	margin:auto;
+	padding-top: 20px;
+	text-align: center;
+}
+
+table{
+	width: 100%;
+	font-family: Arial, sans-serif;
+	text-align: center;
+//	padding: 15px;
+	border-spacing: 0px 10px;
+	color: #34495E;
+	table-layout: fixed;
+}
+
+.info{
+	font-size: 3em;
+	font-style: italic;
+	//border-bottom: 1px solid #aaa;
+}
+
+.labels{
+	font-size: .8em;
+	font-family: "Arial Narrow", Arial, sans-serfif;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	text-align: center;
+	
+}
+
+#stat{
+	//color: #3498DB;
+	color: #D35400;
+}
+
+
+#setpoints_table th{
+	color: #34495E;
+	font-family: "Arial Narrow", Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+a{
+	color: #76D7C4;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+	font-style: italic;
+	font-size: .8em;
+}
+
+a:hover{
+	color: #85C1E9;
+}
+
+#new_set_form input{
+	width: 95%;
+	text-align: center;
+	color: #34495E;
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+}
+
+

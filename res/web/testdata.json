@@ -1,0 +1,24 @@
+{
+	"stats" : [
+	  {
+		"id" : 1,
+		"current_temp" : 699,
+		"current_setpoint" : 81,
+		"heater_status" : 1
+	  }
+	],
+	"setpoints" : [
+	  {
+		"id" : 1,
+		"temp" : 45,
+		"time_h" : 12,
+		"time_m" : 30 
+	  },
+	  {
+		"id" : 2,
+		"temp" : 55,
+		"time_h" : 14,
+		"time_m" : 15
+	  }
+	]
+}

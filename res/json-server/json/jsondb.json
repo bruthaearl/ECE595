@@ -2,9 +2,10 @@
   "stats": [
     {
       "id": 1,
-      "current_temp": 699,
-      "current_setpoint": 81,
-      "heater_status": 1
+      "current_temp": 45,
+      "current_setpoint": 45,
+      "heater_status": 0,
+      "heater": 1
     }
   ],
   "setpoints": [
@@ -55,6 +56,18 @@
       "time_h": 18,
       "time_m": 32,
       "id": 9
+    },
+    {
+      "temp": 0,
+      "time_h": 1,
+      "time_m": 2,
+      "id": 10
+    },
+    {
+      "temp": 45,
+      "time_h": 16,
+      "time_m": 41,
+      "id": 11
     }
   ]
 }

@@ -3,19 +3,81 @@
 #include <zconf.h>
 #include "enums_structs_etc.h"
 #include "function_decs.h"
+#include <string.h>
+#include <syslog.h>
+#include <signal.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
-#define DB_SIZE 2000
+
+#define DAEMON_NAME "THERMOSTAT"
 
 
 tempstuff_t tempStuff;
 sysstuff_t sysStuff;
 setpoints_t setpointdb;
+curlstuff_t curlStuff;
+
+char url[] = "http://localhost:3000/stats/1";
+
+
+static void _signal_handler(const int signal){
+    switch(signal){
+        case SIGHUP:
+            break;
+        case SIGTERM:
+            syslog(LOG_INFO, "received SIGTERM, exiting.");
+            closelog();
+            exit(OK);
+            break;
+        default:
+            syslog(LOG_INFO, "received unhandled signal");
+            break;
+    }
+}
 
 
 int main() {
 
-    //char *db_buffer = calloc(DB_SIZE, (sizeof *db_buffer));
+    openlog(DAEMON_NAME, LOG_PID | LOG_NDELAY | LOG_NOWAIT, LOG_DAEMON);
+    syslog(LOG_INFO, "starting the thermostat daemon");
 
+    // fork
+    pid_t pid = fork();
+
+    if(pid < 0){
+        syslog(LOG_ERR, ERROR_FORMAT, strerror(errno));
+        closelog();
+        return ERR_FORK;
+    }
+
+    if(pid > 0) {
+        closelog();
+        return OK;
+    }
+
+    if(setsid() < -1) {
+        syslog(LOG_ERR, ERROR_FORMAT, strerror(errno));
+        closelog();
+        return ERR_SETSID;
+    }
+
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
+    umask(S_IRUSR | S_IWUSR);
+
+    if(chdir("/") < 0) {
+        syslog(LOG_ERR, ERROR_FORMAT, strerror(errno));
+        return ERR_CHDIR;
+    }
+
+    signal(SIGTERM, _signal_handler);
+    signal(SIGHUP, _signal_handler);
+
+    // quick inits
+    strcpy(curlStuff.url, url);
     tempStuff.setpoint = 45;
 
     sysStuff.state = INITIALIZE;
@@ -33,26 +95,24 @@ int main() {
                 makeDecision(&tempStuff, &sysStuff, &setpointdb);
                 break;
             case READ_SETPOINTS :
-                readSetpoints(&sysStuff, &setpointdb);
+                readSetpoints(&sysStuff, &setpointdb, &tempStuff);
                 break;
-
-            case DEBUG:
-                printf("current state %d\n", sysStuff.state);
-                printf("setpoint: %d\n", tempStuff.setpoint);
-                printf("temperature reading: %d\n", tempStuff.temp);
-                printf("heater status %d\n", tempStuff.heater);
-                sleep(5);
+            case PUBLISH_TO_SERVER :
+                publish(&tempStuff, &curlStuff, &sysStuff);
+                break;
+            case LOOP:
+                syslog(LOG_INFO, "TEMP: %d", tempStuff.temp);
+                syslog(LOG_INFO, "SETPOINT: %d", tempStuff.setpoint);
+                sleep(6);
                 sysStuff.next_state = READ_THERMOCOUPLE;
                 break;
             default :
                 exit(20);
         }
-
         sysStuff.state = sysStuff.next_state;
-
-
     }
 
-
+    closelog();
+    return UHH_OH; // how did we get here?
 }
 

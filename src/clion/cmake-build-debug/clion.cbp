@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/jake/school/introIOT/project/src/clion/./lib"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
@@ -63,6 +64,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/jake/school/introIOT/project/src/clion/./lib"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
@@ -98,6 +100,9 @@
 			<Option target="clion"/>
 		</Unit>
 		<Unit filename="/home/jake/school/introIOT/project/src/clion/makeDecision.c">
+			<Option target="clion"/>
+		</Unit>
+		<Unit filename="/home/jake/school/introIOT/project/src/clion/publish.c">
 			<Option target="clion"/>
 		</Unit>
 		<Unit filename="/home/jake/school/introIOT/project/src/clion/readSetpoints.c">

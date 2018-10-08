@@ -6,10 +6,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <syslog.h>
+#include <stdlib.h>
 #include "enums_structs_etc.h"
 #include "function_decs.h"
 
-void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb){
+void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb, tempstuff_t *tempStuff){
 
     char *db_buffer = 0;
     long length;
@@ -17,6 +19,7 @@ void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb){
     //open the file
     FILE *temp_file = fopen(DB_PATH, "r");
 
+    // load file into buffer, zero-terminate
     if (temp_file) {
         fseek (temp_file, 0, SEEK_END);
         length = ftell (temp_file);
@@ -29,12 +32,16 @@ void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb){
         }
 
         fclose (temp_file);
+    } else{
+        syslog(LOG_ERR, ERROR_FORMAT, "Error opening database file. Exiting");
+        exit(-1);
     }
 
-    printf("%s\n", db_buffer);
-
-    // parse the file
+    // parse the file with cJSON
     cJSON *root = cJSON_Parse(db_buffer);
+    if(root == NULL){
+        syslog(LOG_ERR, ERROR_FORMAT, "Error: database not in correct format");
+    }
     cJSON *setpoints = cJSON_GetObjectItem(root, "setpoints");
     int setpoints_count = cJSON_GetArraySize(setpoints);
 
@@ -42,13 +49,11 @@ void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb){
     setpointdb->count = setpoints_count;
     //load setpoints into struct
     for(i=0; i<setpoints_count && i<MAX_SETPOINTS; i++){
-        printf("temp: \n");
         cJSON *setpoint = cJSON_GetArrayItem(setpoints, i);
-        int temp = cJSON_GetObjectItem(setpoint, "temp")->valueint;
         setpointdb->temp[i] = cJSON_GetObjectItem(setpoint, "temp")->valueint;
         setpointdb->time_h[i] = cJSON_GetObjectItem(setpoint, "time_h")->valueint;
         setpointdb->time_m[i] = cJSON_GetObjectItem(setpoint, "time_m")->valueint;
-        printf("%d %d %d \n", setpointdb->temp[i], setpointdb->time_h[i], setpointdb->time_m[i]);
+  //      printf("%d %d %d \n", setpointdb->temp[i], setpointdb->time_h[i], setpointdb->time_m[i]);
     }
 
     //fill the remaining with -1
@@ -57,11 +62,16 @@ void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb){
         setpointdb->temp[i] = -1;
         setpointdb->time_h[i] = -1;
         setpointdb->time_m[i] = -1;
-        printf("i: %d\n", i);
     }
 
+    //read manual setpoint
+    cJSON *stats = cJSON_GetObjectItem(root, "stats");
+    cJSON *stat = cJSON_GetArrayItem(stats, 0);
+    tempStuff->read_setpoint = cJSON_GetObjectItem(stat, "current_setpoint")->valueint;
+    printf("read setpoint: %d\n", tempStuff->read_setpoint);
 
     cJSON_Delete(root);
+
     sysStuff->next_state = MAKE_DECISION;
 }
 

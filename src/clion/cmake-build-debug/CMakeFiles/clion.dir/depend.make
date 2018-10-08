@@ -4,7 +4,9 @@
 CMakeFiles/clion.dir/cJSON.c.o: ../cJSON.c
 CMakeFiles/clion.dir/cJSON.c.o: ../cJSON.h
 
+CMakeFiles/clion.dir/getTemp.c.o: ../cJSON.h
 CMakeFiles/clion.dir/getTemp.c.o: ../enums_structs_etc.h
+CMakeFiles/clion.dir/getTemp.c.o: ../function_decs.h
 CMakeFiles/clion.dir/getTemp.c.o: ../getTemp.c
 
 CMakeFiles/clion.dir/initialize.c.o: ../enums_structs_etc.h
@@ -17,6 +19,11 @@ CMakeFiles/clion.dir/main.c.o: ../main.c
 
 CMakeFiles/clion.dir/makeDecision.c.o: ../enums_structs_etc.h
 CMakeFiles/clion.dir/makeDecision.c.o: ../makeDecision.c
+
+CMakeFiles/clion.dir/publish.c.o: ../cJSON.h
+CMakeFiles/clion.dir/publish.c.o: ../enums_structs_etc.h
+CMakeFiles/clion.dir/publish.c.o: ../function_decs.h
+CMakeFiles/clion.dir/publish.c.o: ../publish.c
 
 CMakeFiles/clion.dir/readSetpoints.c.o: ../cJSON.h
 CMakeFiles/clion.dir/readSetpoints.c.o: ../enums_structs_etc.h

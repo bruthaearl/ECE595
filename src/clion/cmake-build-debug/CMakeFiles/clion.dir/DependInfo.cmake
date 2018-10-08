@@ -9,12 +9,14 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/jake/school/introIOT/project/src/clion/initialize.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/initialize.c.o"
   "/home/jake/school/introIOT/project/src/clion/main.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/main.c.o"
   "/home/jake/school/introIOT/project/src/clion/makeDecision.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/makeDecision.c.o"
+  "/home/jake/school/introIOT/project/src/clion/publish.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/publish.c.o"
   "/home/jake/school/introIOT/project/src/clion/readSetpoints.c" "/home/jake/school/introIOT/project/src/clion/cmake-build-debug/CMakeFiles/clion.dir/readSetpoints.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  ".././lib"
   )
 
 # Targets to which this target links.

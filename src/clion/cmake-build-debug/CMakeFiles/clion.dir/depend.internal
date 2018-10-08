@@ -5,7 +5,9 @@ CMakeFiles/clion.dir/cJSON.c.o
  /home/jake/school/introIOT/project/src/clion/cJSON.c
  /home/jake/school/introIOT/project/src/clion/cJSON.h
 CMakeFiles/clion.dir/getTemp.c.o
+ /home/jake/school/introIOT/project/src/clion/cJSON.h
  /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+ /home/jake/school/introIOT/project/src/clion/function_decs.h
  /home/jake/school/introIOT/project/src/clion/getTemp.c
 CMakeFiles/clion.dir/initialize.c.o
  /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
@@ -18,6 +20,11 @@ CMakeFiles/clion.dir/main.c.o
 CMakeFiles/clion.dir/makeDecision.c.o
  /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
  /home/jake/school/introIOT/project/src/clion/makeDecision.c
+CMakeFiles/clion.dir/publish.c.o
+ /home/jake/school/introIOT/project/src/clion/cJSON.h
+ /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
+ /home/jake/school/introIOT/project/src/clion/function_decs.h
+ /home/jake/school/introIOT/project/src/clion/publish.c
 CMakeFiles/clion.dir/readSetpoints.c.o
  /home/jake/school/introIOT/project/src/clion/cJSON.h
  /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h

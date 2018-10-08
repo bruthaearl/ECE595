@@ -258,6 +258,33 @@ makeDecision.c.s:
 	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/makeDecision.c.s
 .PHONY : makeDecision.c.s
 
+publish.o: publish.c.o
+
+.PHONY : publish.o
+
+# target to build an object file
+publish.c.o:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/publish.c.o
+.PHONY : publish.c.o
+
+publish.i: publish.c.i
+
+.PHONY : publish.i
+
+# target to preprocess a source file
+publish.c.i:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/publish.c.i
+.PHONY : publish.c.i
+
+publish.s: publish.c.s
+
+.PHONY : publish.s
+
+# target to generate assembly for a file
+publish.c.s:
+	$(MAKE) -f CMakeFiles/clion.dir/build.make CMakeFiles/clion.dir/publish.c.s
+.PHONY : publish.c.s
+
 readSetpoints.o: readSetpoints.c.o
 
 .PHONY : readSetpoints.o
@@ -309,6 +336,9 @@ help:
 	@echo "... makeDecision.o"
 	@echo "... makeDecision.i"
 	@echo "... makeDecision.s"
+	@echo "... publish.o"
+	@echo "... publish.i"
+	@echo "... publish.s"
 	@echo "... readSetpoints.o"
 	@echo "... readSetpoints.i"
 	@echo "... readSetpoints.s"

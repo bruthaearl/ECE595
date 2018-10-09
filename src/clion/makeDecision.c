@@ -12,7 +12,7 @@ void makeDecision(tempstuff_t *tempStuff, sysstuff_t *sysStuff, setpoints_t *set
 
     //Does read setpoint match loaded setpoint? If not, setpoint was set manually
     if(tempStuff->setpoint != tempStuff->read_setpoint){
-        tempStuff->setpoint != tempStuff->read_setpoint;
+        tempStuff->setpoint = tempStuff->read_setpoint;
         syslog(LOG_INFO, "New manual setpoint: %d", tempStuff->setpoint);
     };
 

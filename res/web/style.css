@@ -3,6 +3,15 @@ body{
 
 }
 
+h1{
+	color: #34495E;
+	font-family: Georgia, serif;
+	text-transform: uppercase;
+	font-style: italic;
+	font-size: 3em;
+	text-align: center;
+}
+
 h2{
 	color: #34495E;
 	font-family: Arial, sans-serif;

@@ -19,7 +19,7 @@ void publish(tempstuff_t *tempstuff, curlstuff_t *curlstuff, sysstuff_t *sysStuf
     curl = curl_easy_init();
     if(curl){
         // Set up URL
-        curl_easy_setopt(curl, CURLOPT_URL, curlstuff->url);
+        curl_easy_setopt(curl, CURLOPT_URL, curlstuff->staturl);
         // load the json headers
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Accept: application/json");

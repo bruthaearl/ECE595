@@ -1,2 +1,0 @@
-https://stackoverflow.com/questions/9434207/reading-from-file-using-fgets
-https://stackoverflow.com/questions/16900874/using-cjson-to-read-in-a-json-array

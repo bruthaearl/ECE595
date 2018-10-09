@@ -1,10 +1,21 @@
-
-const db_setpoint = 'http://localhost:3000/setpoints';
-const db_setpoint_sorted = 'http://localhost:3000/setpoints?_sort=time_h,time_m&_order=asc';
-const db_stats = 'http://localhost:3000/stats'
-const db_stats_patch = 'http://localhost:3000/stats/1'
-const db_setpoint_delete = 'http://localhost:3000/setpoints/'
+const db_url = 'http://18.224.222.33:3000/';
+const db_setpoint = db_url + 'setpoints';
+const db_setpoint_sorted = db_url +'setpoints?_sort=time_h,time_m&_order=asc';
+const db_stats = db_url + 'stats'
+const db_stats_patch = db_url + 'stats/1'
+const db_setpoint_delete = db_url + 'setpoints/'
 const setpoints_table = document.getElementById('setpoints_table'); 
+
+//prevent enter key from submitting form 
+window.addEventListener('keydown',function(e){
+	if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+		if(e.target.nodeName=='INPUT'&&e.target.type=='number'){
+			e.preventDefault();
+			return false;
+		}
+	}
+},true);
+
 
 //Update DOM helper
 function updateElement(element, newstuff){
@@ -23,7 +34,13 @@ function append(parent, element){
 
 //Update time
 var current_time = new Date();
-updateElement("time", current_time.getHours()+":"+current_time.getMinutes());
+current_hours = current_time.getHours();
+current_minutes = current_time.getMinutes();
+if(current_minutes.toString().length == 1){
+	current_minutes = "0" + current_minutes;
+}
+updateElement("time", current_hours+":"+current_minutes);
+
 
 //Load setpoints
 fetch(db_setpoint_sorted)
@@ -99,7 +116,7 @@ function verifySetpoint(temp, time_h, time_m){
 }
 
 
-//Submit setpoint form
+//Submit scheduled setpoint form
 function submitScheduledSetpoint(){
 
 	let temp_temp = parseInt(document.getElementById("new_temp").value);
@@ -130,9 +147,11 @@ function submitScheduledSetpoint(){
 	.then(res=>res.json())
   	.then(res => console.log(res));
 
-  	location.reload(true);
+    setTimeout(reFresh, 500);
 }
 
+
+//submit manual setpoint form
 function submitSetpoint(){
 
 	let setpoint_temp = parseInt(document.getElementById("new_manual_setpoint").value);
@@ -160,39 +179,11 @@ function submitSetpoint(){
 	.then(res=>res.json())
   	.then(res => console.log(res));
 
-  	location.reload(true);
+   	setTimeout(reFresh, 500);
 }
 
-function submitSetpoint(){
 
-	let setpoint_temp = parseInt(document.getElementById("new_manual_setpoint").value);
-	console.log(setpoint_temp);
-	var verified = verifySetpoint(setpoint_temp, 1, 1);
-
-	if(!verified){
-		alert("Invalid Numbers");
-		return -1;
-	}
-
-	var post_data = new Object();
-	post_data["current_setpoint"] = setpoint_temp;
-
-	console.log(JSON.stringify(post_data));
-
-	fetch(db_stats_patch, {
-  		method: 'PATCH',
-		headers: {
-    		'Accept': 'application/json, text/plain, */*',
-		    'Content-Type': 'application/json'
-  		},
-  		body: JSON.stringify(post_data)
-	})
-	.then(res=>res.json())
-  	.then(res => console.log(res));
-
-  	location.reload(true);
-}
-
+// delete setpoint form
 function deleteSetpoint(){
 
 	let delete_id = parseInt(document.getElementById("delete_field").value);
@@ -218,9 +209,13 @@ function deleteSetpoint(){
 	.then(res=>res.json())
   	.then(res => console.log(res));
 
-  	location.reload(true);
+  	setTimeout(reFresh, 500);
+
+
+  //	location.reload(true);
 }
 
+// hide fields until button is clicked
 function showInputField(id){
 
 	switch(id){
@@ -237,4 +232,7 @@ function showInputField(id){
 	}
 }
 
-
+// timeout to ensure data gets sent
+function reFresh(){
+	location.reload(true);
+}

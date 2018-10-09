@@ -52,8 +52,9 @@ typedef struct{
 
 // curl stuff
 typedef struct{
-    char url[100];
+    char staturl[100];
     long http_code;
+    char dburl[100];
 } curlstuff_t;
 
 #endif //CLION_ENUMS_STRUCTS_ETC_H

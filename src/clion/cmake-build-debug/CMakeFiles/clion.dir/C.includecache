@@ -20,22 +20,6 @@ cJSON.h
 enums_structs_etc.h
 /home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
 
-/home/jake/school/introIOT/project/src/clion/getTemp.c
-stdio.h
--
-syslog.h
--
-stdlib.h
--
-function_decs.h
-/home/jake/school/introIOT/project/src/clion/function_decs.h
-enums_structs_etc.h
-/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
-
-/home/jake/school/introIOT/project/src/clion/initialize.c
-enums_structs_etc.h
-/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
-
 /home/jake/school/introIOT/project/src/clion/main.c
 stdio.h
 -
@@ -59,20 +43,4 @@ sys/stat.h
 -
 sys/types.h
 -
-
-/home/jake/school/introIOT/project/src/clion/readSetpoints.c
-stdio.h
--
-string.h
--
-stdlib.h
--
-syslog.h
--
-stdlib.h
--
-enums_structs_etc.h
-/home/jake/school/introIOT/project/src/clion/enums_structs_etc.h
-function_decs.h
-/home/jake/school/introIOT/project/src/clion/function_decs.h
 

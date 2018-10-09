@@ -11,7 +11,7 @@
 void initialize(tempstuff_t *tempStuff, sysstuff_t *sysStuff);
 void getTemp(tempstuff_t *tempStuff, sysstuff_t *sysStuff);
 void makeDecision(tempstuff_t *tempStuff, sysstuff_t *sysStuff, setpoints_t *setpointdb);
-void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb, tempstuff_t *tempStuff);
+void readSetpoints(sysstuff_t *sysStuff, setpoints_t *setpointdb, tempstuff_t *tempStuff, curlstuff_t *curlStuff);
 void publish(tempstuff_t *tempstuff, curlstuff_t *curlstuff, sysstuff_t *sysstuff);
 
 #endif //CLION_FUNCTION_DECS_H

@@ -11,7 +11,7 @@
 #include <sys/types.h>
 
 
-#define DAEMON_NAME "THERMOSTAT"
+#define DAEMON_NAME "HOTBOX"
 
 
 tempstuff_t tempStuff;
@@ -19,7 +19,8 @@ sysstuff_t sysStuff;
 setpoints_t setpointdb;
 curlstuff_t curlStuff;
 
-char url[] = "ec2-18-223-120-222.us-east-2.compute.amazonaws.com:3000/stats/1";
+char staturl[] = "http://18.224.222.33:3000/stats/1";
+char dburl[] ="http://18.224.222.33/db/jsondb.json";
 
 
 static void _signal_handler(const int signal){
@@ -41,7 +42,7 @@ static void _signal_handler(const int signal){
 int main() {
 
     openlog(DAEMON_NAME, LOG_PID | LOG_NDELAY | LOG_NOWAIT, LOG_DAEMON);
-    syslog(LOG_INFO, "starting the thermostat daemon");
+    syslog(LOG_INFO, "starting the HOTBOX daemon");
 
     // fork
     pid_t pid = fork();
@@ -77,8 +78,9 @@ int main() {
     signal(SIGHUP, _signal_handler);
 
     // quick inits
-    strcpy(curlStuff.url, url);
-    tempStuff.setpoint = 45;
+    strcpy(curlStuff.staturl, staturl);
+    strcpy(curlStuff.dburl, dburl);
+    tempStuff.setpoint = 47;
 
     sysStuff.state = INITIALIZE;
     while (1) {
@@ -95,7 +97,7 @@ int main() {
                 makeDecision(&tempStuff, &sysStuff, &setpointdb);
                 break;
             case READ_SETPOINTS :
-                readSetpoints(&sysStuff, &setpointdb, &tempStuff);
+                readSetpoints(&sysStuff, &setpointdb, &tempStuff, &curlStuff);
                 break;
             case PUBLISH_TO_SERVER :
                 publish(&tempStuff, &curlStuff, &sysStuff);

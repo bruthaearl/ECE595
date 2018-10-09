@@ -19,7 +19,7 @@ sysstuff_t sysStuff;
 setpoints_t setpointdb;
 curlstuff_t curlStuff;
 
-char url[] = "http://localhost:3000/stats/1";
+char url[] = "ec2-18-223-120-222.us-east-2.compute.amazonaws.com:3000/stats/1";
 
 
 static void _signal_handler(const int signal){

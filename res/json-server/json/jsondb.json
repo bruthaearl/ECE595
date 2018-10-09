@@ -3,71 +3,17 @@
     {
       "id": 1,
       "current_temp": 45,
-      "current_setpoint": 45,
+      "current_setpoint": 46,
       "heater_status": 0,
       "heater": 1
     }
   ],
   "setpoints": [
     {
-      "id": 2,
-      "temp": 55,
-      "time_h": 14,
-      "time_m": 15
-    },
-    {
-      "temp": 4,
-      "time_h": 5,
-      "time_m": 6,
-      "id": 3
-    },
-    {
-      "temp": 4,
-      "time_h": 5,
-      "time_m": 6,
-      "id": 4
-    },
-    {
-      "temp": 69,
-      "time_h": 16,
-      "time_m": 5,
-      "id": 5
-    },
-    {
-      "temp": 65,
-      "time_h": 5,
-      "time_m": 19,
-      "id": 6
-    },
-    {
-      "temp": 95,
-      "time_h": 5,
-      "time_m": 4,
-      "id": 7
-    },
-    {
-      "temp": 69,
-      "time_h": 18,
-      "time_m": 31,
-      "id": 8
-    },
-    {
-      "temp": 75,
-      "time_h": 18,
-      "time_m": 32,
-      "id": 9
-    },
-    {
-      "temp": 0,
-      "time_h": 1,
-      "time_m": 2,
-      "id": 10
-    },
-    {
-      "temp": 45,
-      "time_h": 16,
-      "time_m": 41,
-      "id": 11
+      "temp": 42,
+      "time_h": 20,
+      "time_m": 51,
+      "id": 1
     }
   ]
 }

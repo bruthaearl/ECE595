@@ -2,9 +2,9 @@ CC=gcc
 CCFLAGS=
 INCLUDES=
 LFLAGS=-L/usr/lib/x86_64-linux-gnu
-LIBS=-lcurl -lpthread -lcjson
+LIBS=-lcurl -lpthread 
 
-SRC=main.c enums_structs_etc.h function_decs.h getTemp.c initialize.c makeDecision.c readSetpoints.c
+SRC=main.c enums_structs_etc.h function_decs.h getTemp.c initialize.c makeDecision.c readSetpoints.c publish.c cJSON.c cJSON.h
 OBJ=$(SRC:.c=.o)
 MAIN=test
 

@@ -2,6 +2,8 @@
 const db_setpoint = 'http://localhost:3000/setpoints';
 const db_setpoint_sorted = 'http://localhost:3000/setpoints?_sort=time_h,time_m&_order=asc';
 const db_stats = 'http://localhost:3000/stats'
+const db_stats_patch = 'http://localhost:3000/stats/1'
+const db_setpoint_delete = 'http://localhost:3000/setpoints/'
 const setpoints_table = document.getElementById('setpoints_table'); 
 
 //Update DOM helper
@@ -98,7 +100,7 @@ function verifySetpoint(temp, time_h, time_m){
 
 
 //Submit setpoint form
-function submitSetpoint(){
+function submitScheduledSetpoint(){
 
 	let temp_temp = parseInt(document.getElementById("new_temp").value);
 	let temp_time_h = parseInt(document.getElementById("new_hour").value);
@@ -130,3 +132,109 @@ function submitSetpoint(){
 
   	location.reload(true);
 }
+
+function submitSetpoint(){
+
+	let setpoint_temp = parseInt(document.getElementById("new_manual_setpoint").value);
+	console.log(setpoint_temp);
+	var verified = verifySetpoint(setpoint_temp, 1, 1);
+
+	if(!verified){
+		alert("Invalid Numbers");
+		return -1;
+	}
+
+	var post_data = new Object();
+	post_data["current_setpoint"] = setpoint_temp;
+
+	console.log(JSON.stringify(post_data));
+
+	fetch(db_stats_patch, {
+  		method: 'PATCH',
+		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+		    'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(post_data)
+	})
+	.then(res=>res.json())
+  	.then(res => console.log(res));
+
+  	location.reload(true);
+}
+
+function submitSetpoint(){
+
+	let setpoint_temp = parseInt(document.getElementById("new_manual_setpoint").value);
+	console.log(setpoint_temp);
+	var verified = verifySetpoint(setpoint_temp, 1, 1);
+
+	if(!verified){
+		alert("Invalid Numbers");
+		return -1;
+	}
+
+	var post_data = new Object();
+	post_data["current_setpoint"] = setpoint_temp;
+
+	console.log(JSON.stringify(post_data));
+
+	fetch(db_stats_patch, {
+  		method: 'PATCH',
+		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+		    'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(post_data)
+	})
+	.then(res=>res.json())
+  	.then(res => console.log(res));
+
+  	location.reload(true);
+}
+
+function deleteSetpoint(){
+
+	let delete_id = parseInt(document.getElementById("delete_field").value);
+	console.log(delete_id);
+
+	if(isNaN(delete_id)){
+		alert("Invalid ID");
+		return -1;
+	}
+
+	var delete_data = new Object();
+	delete_url = db_setpoint_delete + delete_id;
+	console.log(delete_url);
+
+	fetch(delete_url, {
+  		method: 'DELETE',
+		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+		    'Content-Type': 'application/json'
+  		},
+  //		body: JSON.stringify(post_data)
+	})
+	.then(res=>res.json())
+  	.then(res => console.log(res));
+
+  	location.reload(true);
+}
+
+function showInputField(id){
+
+	switch(id){
+		case 1:
+		document.getElementById("manual_set_form").style.display = "inline";
+		break;
+		case 2:
+		document.getElementById("delete_form").style.display = "inline";
+		break;
+		default:
+		case 3:
+		document.getElementById("sch_set_form").style.display = "inline";
+		break;
+	}
+}
+
+

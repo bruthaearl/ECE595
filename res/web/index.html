@@ -26,7 +26,8 @@
   </tr>
 </table>
 
-<br><br>
+<br>
+
 
 <h2>Scheduled Setpoints</h2>
 <table id="setpoints_table">
@@ -38,27 +39,61 @@
   <!- javascript will load the table data... hopefully :) ->
 </table>
 
+<br>
+
 <table id="links_table">
   <tr>
-	<td><a href="add_setpoint.html">Schedule new setpoint</a></td>
-	<td><a href="#delete">Delete all setpoints</a></td>
+	<td><a href="#" onclick="showInputField(1)">New setpoint</a></td>
+	<td><a href="#" onclick="showInputField(3)">New scheduled setpoint</a></td>
+  <td><a href="#" onclick="showInputField(2)">Delete setpoint</a></td>
   </tr>
-</p>
 </table>
 
-<form id="new_set_form">
-<br><br>
+<br>
+
+<form id="manual_set_form">
 <h2>New Setpoint</h2>
-<table id="new_set_table">
+<table id="manual_set_table">
   <tr>
-	<td><input type="number" name="new_temp" min="0" max="100" placeholder="Temp (C)" id="new_temp"></td>
-	<td><input type="number" name="new_hr" min="0" max="24" placeholder="Hour (1-24)" id="new_hour"></td>
-	<td><input type="number" name="new_min" min="0" max="60" placeholder="Minute (1-60)" id="new_minute" required></td>
+  <td></td>
+  <td><input type="number" name="new_manual_setpoint" min="0" max="100" placeholder="Temp (C)" id="new_manual_setpoint" class="nfield"></td>
+  <td></td>
   </tr>
   <tr><td colspan="3"><input type="button" value="Submit" class="button" onclick="submitSetpoint()"></td>
   </tr>
 </table>
 </form>
+
+<br>
+
+<form id="sch_set_form">
+<h2>New Scheduled Setpoint</h2>
+<table id="sch_set_table">
+  <tr>
+	<td><input type="number" name="new_temp" min="0" max="100" placeholder="Temp (C)" class="nfield" id="new_temp"></td>
+	<td><input type="number" name="new_hr" min="0" max="24" placeholder="Hour (1-24)" class="nfield" id="new_hour"></td>
+	<td><input type="number" name="new_min" min="0" max="60" placeholder="Minute (1-60)" class="nfield" id="new_minute" required></td>
+  </tr>
+  <tr><td colspan="3"><input type="button" value="Submit" class="button" onclick="submitScheduledSetpoint()"></td>
+  </tr>
+</table>
+</form>
+
+<br>
+
+<form id="delete_form">
+<h2>Delete Setpoint</h2>
+<table id="delete_table">
+  <tr>
+  <td></td>
+  <td><input type="number" name="delete_field" min="0" max="100" placeholder="ID" id="delete_field" class="nfield"></td>
+  <td></td>
+  </tr>
+  <tr><td colspan="3"><input type="button" value="Submit" class="button" onclick="deleteSetpoint()"></td>
+  </tr>
+</table>
+</form>
+
 
 
 </div>

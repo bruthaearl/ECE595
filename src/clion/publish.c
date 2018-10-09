@@ -2,6 +2,7 @@
 #include <string.h>
 #include <curl/curl.h>
 #include <syslog.h>
+#include <stdlib.h>
 #include "enums_structs_etc.h"
 #include "enums_structs_etc.h"
 #include "function_decs.h"
@@ -37,16 +38,12 @@ void publish(tempstuff_t *tempstuff, curlstuff_t *curlstuff, sysstuff_t *sysStuf
         // *curl_code = res;
         if(res != CURLE_OK){
             curl_easy_cleanup(curl);
-            syslog(LOG_INFO, "Curl error: bad request");
+            syslog(LOG_ERR, ERROR_FORMAT, "Curl error: bad request");
         }
-
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpcode);
-        curlstuff->http_code = httpcode;
-
         curl_easy_cleanup(curl);
 
     } else{
-        syslog(LOG_INFO, "Curl error: bad request");
+        syslog(LOG_ERR, ERROR_FORMAT, "Curl error: bad request");
     }
 
     sysStuff->next_state = LOOP;

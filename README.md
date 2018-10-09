@@ -1,3 +1,3 @@
 # *Jacob Jones - Final Project*
 To Do:
-- [ ] Everything
+- [ ] Harden EVERYTHING
